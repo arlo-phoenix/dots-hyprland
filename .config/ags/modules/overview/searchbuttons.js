@@ -6,6 +6,7 @@ const { execAsync, exec } = Utils;
 import { searchItem } from './searchitem.js';
 import { execAndClose, couldBeMath, launchCustomCommand } from './miscfunctions.js';
 import GeminiService from '../../services/gemini.js';
+import GPTService from '../../services/gpt.js'
 
 export const DirectoryButton = ({ parentPath, name, type, icon }) => {
     const actionText = Widget.Revealer({
@@ -165,11 +166,11 @@ export const SearchButton = ({ text = '' }) => searchItem({
 
 export const AiButton = ({ text }) => searchItem({
     materialIconName: 'chat_paste_go',
-    name: 'Ask Gemini',
+    name: 'Ask Llama',
     actionName: 'Ask',
     content: `${text}`,
     onActivate: () => {
-        GeminiService.send(text);
+        GPTService.send(text);
         App.closeWindow('overview');
         App.openWindow('sideleft');
     },
