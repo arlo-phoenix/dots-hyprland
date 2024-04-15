@@ -39,6 +39,13 @@ const PROVIDERS = { // There's this list hmm https://github.com/zukixa/cool-ai-s
         'key_get_url': 'https://discord.com/invite/Y4J6XXnmQ6',
         'key_file': 'zuki_key.txt',
     },
+    'ollama': {
+        'name': 'Ollama',
+        'logo_name': 'ollama-symbolic',
+        'description': 'Local Server running on port 11434',
+        'base_url': 'http://127.0.0.1:11434/v1/chat/completions',
+        'key_file': 'ollama_key.txt',
+    },
 }
 
 // Custom prompt
